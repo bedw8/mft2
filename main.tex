@@ -8,9 +8,17 @@
 Facultad de Ciencias Físicas y Matematicas}
 \curso{Meteorología Física}
 
-\usepackage{layout}
+\titleformat{\section}{\bfseries}{Problema \thesection}{0pt}{}
+\usepackage{import}
+\usepackage[subpreambles=true]{standalone}
 
-\begin{document}\layout
+\begin{document}
 \maketitle
+
+\section{}
+\import{.}{p1.tex}
+
+\section{}
+\import{.}{p2.tex}
 
 \end{document}
