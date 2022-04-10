@@ -1,4 +1,4 @@
-\documentclass[class=article, crop=false]{standalone}
+\documentclass[class=article, crop=true]{standalone}
 \usepackage{default}
 
 \begin{document}
@@ -8,13 +8,12 @@ De manera similar a lo visto en clases, usamos la ecuación de estado para el ai
     P_d = \rho_d R_d T\label{Pd}\\ 
     P_v = \rho_v R_v T\label{Pv}
 \end{align}
-
 Sumamos \eqref{Pd} y \eqref{Pv} para obtener la presión total.
 $$    P = P_d + P_v = (\rho_d R_d + \rho_v R_v) T $$
 Ahora multiplicamos y dividimos por $\rho R_d$, con $\rho = \rho_d + \rho_v + \rho_\ell$ la densidad total de la parcela, y $\rho_\ell$ la densidad de agua liquida.
-\begin{equation}
-    P = \left[ \frac{\rho_d R_d + \rho_v R_v}{\rho R_d} \right]\rho R_d T
-\end{equation}
+%\begin{equation}
+%    P = \left[ \frac{\rho_d R_d + \rho_v R_v}{\rho R_d} \right]\rho R_d T
+%\end{equation}
 Dentro del corchete sumaremos el siguiente cero conveniente: $(\rho_v R_d + \rho_\ell R_d - \rho_v R_d - \rho_\ell R_d)$. Luego, 
 \begin{align*}
     P &= \left[ \frac{\rho_d R_d + \rho_v R_v + \rho_v R_d + \rho_\ell R_d - \rho_v R_d - \rho_\ell R_d }{\rho R_d} \right]\rho R_d T\\

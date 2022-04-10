@@ -3,7 +3,7 @@
 
 \begin{document}
 Consideremos una parcela de aire de volumen $dV=Adz$, como el de la figura \ref{dV}.
-\begin{figure}
+\begin{figure}[h]
    \centering
    \vspace{5mm}
    \includegraphics[width=0.5\linewidth]{dV.png}
@@ -22,14 +22,14 @@ Dentro de esta parcela, la cantidad de masa de (vapor de) agua será simplemente
     dV_W &= \frac{qP}{R_dT_V \rho_W}A\,dz \label{dMW}
 \end{align*}
 Consideremos lo siguiente ahora. El volumen de agua condensada lo pondremos en una columna de area transversal $A$, como en la figura \ref{dVW}
-\begin{figure}
+\begin{figure}[h]
     \centering
     \vspace{3mm}
     \includegraphics[width=0.52\linewidth]{dVW.png}
     \caption{Volumen de agua condensada en una columna de area transversal $A$.}
     \label{dVW}
 \end{figure}
-Acorde a la figura, nombraremos $dz_W$ a la altura de la columna de agua. Notemos que $dz_W = dV_W/A$. Con esto en cuenta llegamos a la siguiente expresión
+Acorde a la figura, nombraremos $dz_W$ a la altura de la columna de agua, por unidad de área. Notemos que $dz_W = dV_W/A$. Con esto en cuenta llegamos a la siguiente expresión
 \begin{equation}
    dz_W = \frac{qP}{R_dT_V \rho_W}\,dz \label{dzW} 
 \end{equation}
@@ -63,7 +63,27 @@ Recordemos que de \eqref{Pz} tenemos que $H = \frac{R_d T_v}{g}$, por lo que pod
 \end{align*}
 Finalmente, queda
 \begin{equation}
-    z_W(z_1) = \frac{q_0 P_0}{\rho_W g} \frac{H_v}{H_v + H} (1- e^{-z_1/\bar{H}})
+z_W(z_1) = \frac{q_0 P_0}{\rho_W g} \frac{H_v}{H_v + H} (1- e^{-z_1/\bar{H}}) \label{zW3}
 \end{equation}
+Evaluemos ahora los valores numéricos de las constantes de la ecuación \eqref{zW3}. Por simplicidad consideremos también que $z_1$ tiende a infinito, de modo que la parte exponencial se haga cero.
+%\begin{align*}
+%    zW &= \frac{10[\dfrac{\text{g}}{\text{Kg}}]1013\,\text{hPa}}{997\,[\dfrac{\text{Kg}}{\text{m}^3}]} \frac{3}{11}
+%\end{align*}
+\begin{align*}
+    zW &= \frac{10\left[\dfrac{\text{g}}{\text{Kg}}\right]\,1013\big[\text{hPa}\big]}{997\left[\dfrac{\text{Kg}}{\text{m}^3}\right] 9.78\left[\dfrac{\text{m}}{\text{s}^2}\right]} \frac{3}{11}\\
+       &= \frac{10^{-2} \cdot 1013\big[\text{Pa}\big]\cdot 10^2}{997\left[\dfrac{\text{Kg}}{\text{m}^3}\right] 9.78\left[\dfrac{\text{m}}{\text{s}^2}\right]} \frac{3}{11}\\
+\end{align*}
+Simplificamos las unidades
+\begin{align*}
+      z_W &= \frac{1013}{997 \cdot 9.78} \frac{3}{11} \frac{\big[\text{Pa}\big]}{\left[\dfrac{\text{Kg}}{\text{m}^3}\right]\left[\dfrac{\text{m}}{\text{s}^2}\right]} \\
+       &= \frac{1013\cdot 10^2}{997 \cdot 978} \frac{3}{11} \frac{\left[\dfrac{\text{N}}{\text{m}^2}\right]}{\left[\dfrac{\text{Kg}}{\text{m}^3}\right]\left[\dfrac{\text{m}}{\text{s}^2}\right]} \\
+       &= \frac{1013\cdot 10^2}{997 \cdot 978} \frac{3}{11} \frac{\left[\text{N}\,\text{s}^2\right]}{\big[\text{Kg}\big]}\\
+       &= \frac{1013\cdot 10^2}{997 \cdot 978} \frac{3}{11}\left[\frac{\text{Kg}\,\text{m}}{\text{s}^2}\right] \frac{\left[\text{s}^2\right]}{\big[\text{Kg}\big]}\\
+       &= \frac{1013\cdot 10^2}{997 \cdot 978} \frac{3}{11} \big[\text{m}\big]\\
+       &= \frac{1013\cdot 10^5}{997 \cdot 978} \frac{3}{11} \big[\text{mm}\big]
+\end{align*}
+Finalemnte, tenemos que el nivel de agua en una columna de aire (de altura ``infinita'') es $z_W = 28.3\,$mm
+
+
 
 \end{document}
