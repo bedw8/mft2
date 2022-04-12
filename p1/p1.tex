@@ -2,29 +2,29 @@
 \usepackage{default}
 
 \begin{document}
-
 De manera similar a lo visto en clases, usamos la ecuación de estado para el aire seco y el vapor de agua.
 \begin{align}
-    P_d = \rho_d R_d T\label{Pd}\\ 
-    P_v = \rho_v R_v T\label{Pv}
+    P_d &= \rho_d R_d T \label{Pd} \\ 
+    P_v &= \rho_v R_v T \label{Pv}
 \end{align}
 Sumamos \eqref{Pd} y \eqref{Pv} para obtener la presión total.
 $$    P = P_d + P_v = (\rho_d R_d + \rho_v R_v) T $$
 Ahora multiplicamos y dividimos por $\rho R_d$, con $\rho = \rho_d + \rho_v + \rho_\ell$ la densidad total de la parcela, y $\rho_\ell$ la densidad de agua liquida.
-%\begin{equation}
-%    P = \left[ \frac{\rho_d R_d + \rho_v R_v}{\rho R_d} \right]\rho R_d T
-%\end{equation}
 Dentro del corchete sumaremos el siguiente cero conveniente: $(\rho_v R_d + \rho_\ell R_d - \rho_v R_d - \rho_\ell R_d)$. Luego, 
 \begin{align*}
     P &= \left[ \frac{\rho_d R_d + \rho_v R_v + \rho_v R_d + \rho_\ell R_d - \rho_v R_d - \rho_\ell R_d }{\rho R_d} \right]\rho R_d T\\
     &=  \left[ \frac{(\rho_d + \rho_v + \rho_\ell) R_d +  \rho_v R_v - \rho_v R_d - \rho_\ell R_d }{\rho R_d} \right]\rho R_d T\\
     &=  \left[ \frac{\rho R_d +  \rho_v R_v - \rho_v R_d - \rho_\ell R_d }{\rho R_d} \right]\rho R_d T\\
     &=  \left[ 1 + \frac{ \rho_v R_v - \rho_v R_d - \rho_\ell R_d }{\rho R_d} \right]\rho R_d T\\
-    &=  \left[ 1 + \frac{ \rho_v }{\rho }(R_v - R_d) - \frac{\rho_\ell}{\rho} \right]\rho R_d T\\
+    &=  \left[ 1 + \frac{ \rho_v }{\rho }(R_v - R_d) - \frac{\rho_\ell}{\rho} \right]\rho R_d T
 \end{align*}
 Por definición tendremos que $\rho_v/\rho = q_v$ y $\rho_\ell/\rho = q_\ell$. Además, por lo visto en clases $(R_v - R_d) = \epsilon = 0.61$, por lo que la expresión final para la presión resulta
 \begin{equation}
     P=  \left[ 1 + 0.61\, q_v - q_\ell \right]\rho R_d T\\
+\end{equation}
+De esto se desprende que la nueva temperatura virtual sería
+\begin{equation}
+    T_v = [1 + 0.61 q_v - q_\ell]T
 \end{equation}
 
 \end{document}
